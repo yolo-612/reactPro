@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Button } from 'antd';
 import { StepBackwardOutlined } from '@ant-design/icons'
-import 'antd/dist/antd.css';
+// import 'antd/dist/antd.css'; // 这种是全局，并且全部组件的样式都引入了
 
 function App() {
   const [count, setCount] = useState(0)
