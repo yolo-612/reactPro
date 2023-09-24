@@ -1,17 +1,15 @@
 import { useState } from 'react'
-import { Button } from 'antd';
-import { StepBackwardOutlined } from '@ant-design/icons'
-// import 'antd/dist/antd.css'; // 这种是全局，并且全部组件的样式都引入了
+import { Outlet, Link } from "react-router-dom"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className='App'>
-      测试页面
-      <Button type="primary">122</Button>
-      {/* 注意区分与vue的模板的语法， react外面只有一个{} 里面的{} 是对象 */}
-      <StepBackwardOutlined style={{ fontSize: '40px' }} />
+      {/* 占位符组件，类似于窗口，用来展示组件，有点像vue中的router-view */}
+      <Link to="/home">Home</Link>
+      <Link to="/about">About</Link>
+      <Outlet></Outlet>
     </div>
   )
 }
