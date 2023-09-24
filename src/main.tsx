@@ -5,7 +5,7 @@ import "reset-css"
 // UI框架的样式
 
 // 全局样式【要去覆盖ui框架的样式的】
-import "../src/assets/styles/global.scss"
+import "@/assets/styles/global.scss"
 
 // 组件的样式
 import App from './App.tsx'
