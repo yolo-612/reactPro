@@ -8,6 +8,12 @@ const About = lazy(()=>import("../views/About"))
 //  To fix, updates that suspend should be wrapped with startTransition.
 // 懒加载的模式 需要外面结合suspend一起使用
 
+const withLoadingComponent = (comp: JSX.Element)=> (
+  <React.Suspense fallback={<div>Loading</div>}>
+    {comp}  
+  </React.Suspense> 
+)
+
 import {Navigate} from "react-router-dom"
 
 const routes = [
@@ -21,9 +27,7 @@ const routes = [
   },
   {
     path: "/about",
-    element: <React.Suspense fallback={<div>Loading</div>}>
-      <About></About>
-    </React.Suspense> 
+    element: withLoadingComponent(<About></About>)
   }
 ]
 
